@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>apresentação</title>
+    <meta charset="UTF-8">
+    <meta nome="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="classic_safe.png" type="image/x-icon">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px dashed blue; */
+}
+
+.gt{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+header {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #2b2c2e;
+    padding: 2em;
+    text-align: center;
+    text-shadow:2px 1px #202124;
+}
+
+section {
+    margin: 2em;
+    width: 25em;
+    height: 25em;
+    border-radius: 10px;
+    background-color: #97a3b339;
+    box-shadow: 1px 2px rgba(0, 0, 0, 0.9);
+    overflow-x: auto; 
+    overflow-y: auto; 
+}
+
+
+section h2 {
+    border-bottom: black solid 1px;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #202124;
+    margin-bottom: 10px;
+    text-align: center;
+    position: sticky; 
+    top: 0; 
+    left: 0; 
+    background-color: #97a3b3;
+    z-index: 1000;
+   
+}
+
+#any{
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: .099em;
+    line-height: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    height: 60%;
+    width: 19.9em;
+}
+
+#any::selection{
+    background-color: black;
+    color: white;
+}
+
+#ap{
+    text-align: center;
+}
+
+.material-symbols-outlined {
+    transform: translate(0, 1.399em);
+    font-size: 3em;
+ color: #2b2c2e7f;
+ cursor: pointer;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.material-symbols-outlined:hover{
+    color:black;
+}
+
+fieldset{
+    text-align: center;
+}
+
+.quest{
+    border: none;
+    padding: .2em;
+    border-radius: .2em;
+    margin:.8em 0;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: #202124 .2em .1em .29em;
+}
+#nome{
+ width: 12em;
+}
+#idd{
+width: 3.89em;
+}
+#email{
+    width: 15.89em;
+
+}
+#tel{
+    width: 15.89em;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#bot{
+    width: 15.89em;
+    background-color: #2b2c2e;
+    color: aliceblue;
+}
+#bot:disabled{
+    opacity: .5;
+    cursor: no-drop;
+}
+
+#infoTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#infoTable th, #infoTable td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>apresentação</h1>
+       <p>Não fique apenas na teoria, veja um pouco na prática.</p>
+    </header>
+    
+    <div class="gt">
+        <section id="ap">
+            <h2>apresentação com animação</h2>
+            <div id="any"></div>
+            <span class="material-symbols-outlined">
+                play_arrow
+                </span>
+        </section>
+
+       
+        <section>
+            <h2>questionario elegante</h2>
+            <fieldset>
+                <legend>
+                    questionario base
+                </legend>
+                <form autocomplete="off" name="base">
+                    <input class="quest" id="nome" type="text" value="Charlie Cooper" required>
+                    <input class="quest" id="idd" type="number" value="34" max="99" required>
+                    <input class="quest" id="email" type="email" value="Charliec@gmail.com" placeholder="nome@gmail.com" required>
+                    <input class="quest" id="tel" type="tel" value="(071) 8654-7890" placeholder="(99) 99999-9999" required>
+                    <input class="quest" id="bot" type="submit" value="enviar">
+                </form>
+            </fieldset>
+        </section>
+        <section>
+            <h2>dados mais apresentáveis</h2>
+            <table id="infoTable">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            
+        </section>
+    </div>
+    <script>
+ var textArray = [
+   'Olá, muito obrigado pela sua visita e pela oportunidade de mostrar um pouco do meu trabalho.          ',
+   ' Vou demonstrar na prática, de forma resumida, algumas das minhas capacidades.          ',
+   'Esse é apenas um projeto simples e algumas coisas são interativas para que você não fique apenas com a teoria e para manter a total transparência.          ',
+   'Mas será que essas habilidades realmente fazem a diferença no dia a dia?          ',
+   ' Como elas podem ser aplicadas de maneira prática e eficaz?          ',
+   'Posso contribuir de maneira significativa para várias funções, trazendo eficiência e inovação.          '
+];
+var arrayIndex = 0;
+var charIndex = 0;
+var typingElement = document.getElementById('any');
+var typingSpeed = 100;
+var isPaused = true;
+var typingInterval;
+
+function typeText() {
+    if (charIndex < textArray[arrayIndex].length) {
+        typingElement.textContent += textArray[arrayIndex].charAt(charIndex);
+        charIndex++;
+    } else if (charIndex >= textArray[arrayIndex].length) {
+        arrayIndex++;
+        if (arrayIndex < textArray.length) {
+            typingElement.textContent = '';
+            charIndex = 0;
+        } else {
+            arrayIndex = 0;
+            typingElement.textContent = '';
+            charIndex = 0;
+        }
+    }
+}
+
+document.querySelector('.material-symbols-outlined').addEventListener('click', function(event) {
+    event.preventDefault();
+    isPaused = !isPaused;
+    this.textContent = isPaused ? 'play_arrow' : 'pause';
+    if (!isPaused) {
+        typingInterval = setInterval(typeText, typingSpeed);
+    } else {
+        clearInterval(typingInterval);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.forms['base'];
+    var telInput = form['tel'];
+    var nameInput = form['nome'];
+    var ageInput = form['idd'];
+    var submitButton = form['bot'];
+
+    telInput.addEventListener('blur', function() {
+        var value = this.value.replace(/\D/g, '');
+        if (value.length !== 11) {
+            this.style.color = 'red';
+            submitButton.disabled = true;
+        } else {
+            this.value = '(' + value.slice(0, 2) + ')' + value.slice(2, 7) + '-' + value.slice(7);
+            this.style.color = '';
+            submitButton.disabled = false;
+        }
+    });
+    nameInput.addEventListener('input', function() {
+        if (this.value.length < 4) {
+            this.style.color = 'red';
+            submitButton.disabled = true;
+        } else {
+            this.style.color = '';
+            submitButton.disabled = false;
+        }
+    });
+    ageInput.addEventListener('input', function() {
+        if (isNaN(this.value)) {
+            this.style.color = 'red';
+            submitButton.disabled = true;
+        } else {
+            this.style.color = '';
+            submitButton.disabled = false;
+        }
+    });
+    form.addEventListener('input', function() {
+        var inputs = form.querySelectorAll('.quest');
+        for (var i = 0; i < inputs.length; i++) {
+            if (!inputs[i].validity.valid) {
+                submitButton.disabled = true;
+                inputs[i].style.color = 'red';
+                return;
+            }
+        }
+        submitButton.disabled = false;
+    });
+});
+
+
+
+document.forms['base'].addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var name = this['nome'].value;
+    var age = this['idd'].value;
+    var email = this['email'].value;
+    var tel = this['tel'].value;
+
+    var row = document.createElement('tr');
+    row.innerHTML = '<td>' + name + '</td><td>' + age + '</td><td>' + email + '</td><td>' + tel + '</td>';
+
+    var tbody = document.querySelector('#infoTable tbody');
+    tbody.appendChild(row);
+    Array.from(tbody.getElementsByTagName("TR"))
+    .sort((a, b) => a.cells[0].innerHTML.localeCompare(b.cells[0].innerHTML))
+    .forEach(tr => tbody.appendChild(tr));
+});
+
+
+
+    </script>
+</body>
+</html>
