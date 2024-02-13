@@ -15,6 +15,7 @@
     /* border: 1px dashed blue; */
 }
 
+
 .gt{
     display: flex;
     flex-wrap: wrap;
@@ -28,12 +29,15 @@ header {
     padding: 2em;
     text-align: center;
     text-shadow:2px 1px #202124;
+    font-size: 150%;
 }
 
 section {
-    margin: 2em;
-    width: 25em;
-    height: 25em;
+    margin: 1em;
+    width: 70vw;
+    height: 70vh;
+    max-width: 30em;
+    max-height: 30em;
     border-radius: 10px;
     background-color: #97a3b339;
     box-shadow: 1px 2px rgba(0, 0, 0, 0.9);
@@ -41,11 +45,22 @@ section {
     overflow-y: auto; 
 }
 
+:root {
+    --i: 1;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --i: 0.6; /* Ajuste este valor conforme necessário */
+    }
+}
+
+
 
 section h2 {
     border-bottom: black solid 1px;
     font-family: Arial, sans-serif;
-    font-size: 24px;
+    font-size: 150%;
     color: #202124;
     margin-bottom: 10px;
     text-align: center;
@@ -108,17 +123,21 @@ fieldset{
     box-shadow: #202124 .2em .1em .29em;
 }
 #nome{
- width: 12em;
+width: 50vw;
+ max-width: 20em;
 }
 #idd{
-width: 3.89em;
+width: 10vw;
+max-width: 3.89em;
 }
 #email{
-    width: 15.89em;
+width: 61vw;
+max-width: 23.99em;
 
 }
 #tel{
-    width: 15.89em;
+width: 61vw;
+max-width: 23.99em;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {
