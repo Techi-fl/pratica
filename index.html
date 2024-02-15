@@ -35,27 +35,13 @@ header {
 section {
     margin: 1em;
     width: 70vw;
-    height: 70vh;
-    max-width: 30em;
-    max-height: 30em;
+    height: 25em;
     border-radius: 10px;
     background-color: #97a3b339;
     box-shadow: 1px 2px rgba(0, 0, 0, 0.9);
     overflow-x: auto; 
     overflow-y: auto; 
 }
-
-:root {
-    --i: 1;
-}
-
-@media (max-width: 600px) {
-    :root {
-        --i: 0.6; /* Ajuste este valor conforme necessário */
-    }
-}
-
-
 
 section h2 {
     border-bottom: black solid 1px;
@@ -69,10 +55,11 @@ section h2 {
     left: 0; 
     background-color: #97a3b3;
     z-index: 1000;
-   
+   cursor: context-menu;
 }
 
 #any{
+    transform: translateY(20%);
     font-family: 'Courier New', Courier, monospace;
     letter-spacing: .099em;
     line-height: 2em;
@@ -81,7 +68,7 @@ section h2 {
     margin-left: auto;
     margin-right: auto;
     height: 60%;
-    width: 19.9em;
+    width: 80%;
 }
 
 #any::selection{
@@ -121,23 +108,21 @@ fieldset{
     text-align: center;
     font-weight: bold;
     box-shadow: #202124 .2em .1em .29em;
+    height: 3vw;
+    box-sizing: border-box;
 }
 #nome{
 width: 50vw;
- max-width: 20em;
 }
 #idd{
 width: 10vw;
-max-width: 3.89em;
 }
 #email{
 width: 61vw;
-max-width: 23.99em;
 
 }
 #tel{
 width: 61vw;
-max-width: 23.99em;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {
@@ -150,6 +135,10 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: #2b2c2e;
     color: aliceblue;
 }
+#bot:hover{
+   cursor: pointer;
+}
+
 #bot:disabled{
     opacity: .5;
     cursor: no-drop;
@@ -165,6 +154,43 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     padding: 8px;
 }
+
+#ops{
+    width: 100vw;
+    color: #97a3b3;
+    box-shadow: #202124 .3em .2em .4em;
+    padding: .3em;
+    font-size: 1.3em;
+    font-weight: bold;
+    background-color: rgb(13, 12, 12);
+    text-align: center;
+    transform: rotate(35deg) translate(1em, 7em);
+}
+
+.none{
+    opacity: .5;
+    overflow: hidden;
+    cursor: not-allowed;
+}
+
+.none  li{
+    margin-bottom: 1em;
+}
+
+li > div {
+    border: #202124 dashed .01em;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    padding-top:.01em;
+}
+
+ul span{
+    display: block;
+    transform: translate(3.2em, -3em);
+    font-weight: bold;
+}
+
 
     </style>
 </head>
@@ -198,6 +224,8 @@ input[type=number]::-webkit-outer-spin-button {
                     <input class="quest" id="bot" type="submit" value="enviar">
                 </form>
             </fieldset>
+            <p style="text-align: center; margin-top: .9em;"><span style="color: red;">*</span>Edite os elementos do questionario(lembrando que há regras)</p>
+            <p style="text-align: center; margin-top: .9em;"><span style="color: red;">*</span>Os valores do questionario serão enviados para a tabela abaixo</p>
         </section>
         <section>
             <h2>dados mais apresentáveis</h2>
@@ -215,6 +243,17 @@ input[type=number]::-webkit-outer-spin-button {
             </table>
             
         </section>
+        <section class="none">
+            <h2>sites para negócios</h2>
+            <div id="ops">em andamento...</div>
+            <ul>
+                <li><div></div>R$4,00 <span>produto a</span></li>
+                <li><div></div>R$8,00 <span>produto b</span></li>
+                <li><div></div>R$10,00 <span>produto c</span></li>
+                <li><div></div>R$15,50 <span>produto d</span></li>
+            </ul>
+        </section>
+        
     </div>
     <script>
  var textArray = [
@@ -223,7 +262,9 @@ input[type=number]::-webkit-outer-spin-button {
    'Esse é apenas um projeto simples e algumas coisas são interativas para que você não fique apenas com a teoria e para manter a total transparência.          ',
    'Mas será que essas habilidades realmente fazem a diferença no dia a dia?          ',
    ' Como elas podem ser aplicadas de maneira prática e eficaz?          ',
-   'Posso contribuir de maneira significativa para várias funções, trazendo eficiência e inovação.          '
+   'Posso contribuir de maneira significativa para várias funções, trazendo eficiência e inovação.          ',
+   'Além desses exemplos básicos nos projetos, têm muito mais a oferecer. É possível criar uma variedade de elementos com visuais diferentes,',
+   ' e as possibilidades são infinitas. Assim como a criação de regras e funções, eles são acessíveis para computadores e dispositivos.          '
 ];
 var arrayIndex = 0;
 var charIndex = 0;
