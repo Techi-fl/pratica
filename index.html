@@ -15,6 +15,9 @@
     /* border: 1px dashed blue; */
 }
 
+body{
+    font-size: 2vh;
+}
 
 .gt{
     display: flex;
@@ -29,7 +32,7 @@ header {
     padding: 2em;
     text-align: center;
     text-shadow:2px 1px #202124;
-    font-size: 2.5vw;
+    font-size: 3.5vw;
 }
 
 section {
@@ -115,8 +118,10 @@ fieldset{
 
 
 fieldset{
+    font-size: 2vh;
+    width: fit-content;
     height: fit-content;
-    padding: 3vh;
+    padding: 1.5vh;
 }
 
 #nome{
@@ -199,11 +204,59 @@ ul span{
     font-weight: bold;
 }
 
-th, tr{
-    width: 2vh;
-    height: 2vh;
+th{
     font-size: 3vh;
 }
+
+tr{
+    font-size: 1.5vh;
+}
+
+#upt, #junt{
+    transform: translate(15vw, 0);
+    border: none;
+    font-size: 2vh;
+   padding: 3px;
+   font-weight: bold;
+}
+#upt{
+   width: 35vw;
+   text-align: center;
+   border-bottom: red solid 1px;
+}
+
+#junt{
+    background-color: #202124;
+    color: aliceblue;
+    border-radius: .69vh;
+}
+
+#sort{
+    border-radius: 4vh;
+    font-size: 2vh;
+    font-weight: bold;
+    padding: 3px;
+    color: aliceblue;
+    background-color: #202124;
+    width: 17vw;
+    transform: translate(-15vw, 3.8vh);
+    border: none;
+}
+
+#elements{
+    border-radius: 2vh;
+    border: #202124 dashed 1px;
+    width: 80%;
+    min-height: 2.9vh;
+    transform: translateY(5.8vh);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+    font-size: 2vh;
+}
+
+
     </style>
 </head>
 <body>
@@ -264,6 +317,15 @@ th, tr{
                 <li><div></div>R$10,00 <span>produto c</span></li>
                 <li><div></div>R$15,50 <span>produto d</span></li>
             </ul>
+        </section>
+        <section>
+            <h2>sistema de seleção</h2>
+            <form>
+                <input type="text" id="upt" placeholder="Valor" required>
+                <input type="submit" value="adicionar" id="junt">
+                <button id="sort" onclick="sotr()">sortear</button>
+            </form>
+            <div id="elements"></div>
         </section>
         
     </div>
@@ -380,6 +442,42 @@ document.forms['base'].addEventListener('submit', function(event) {
     Array.from(tbody.getElementsByTagName("TR"))
     .sort((a, b) => a.cells[0].innerHTML.localeCompare(b.cells[0].innerHTML))
     .forEach(tr => tbody.appendChild(tr));
+});
+
+
+
+
+document.getElementById('junt').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita o envio do formulário
+    var valor = document.getElementById('upt').value; // Pega o valor do input
+    var div = document.getElementById('elements'); // Pega a div
+    div.innerHTML += '<p>' + valor + '</p>'; // Adiciona o valor à div
+    document.getElementById('upt').value = ''; // Limpa o input
+});
+
+document.getElementById('sort').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita o envio do formulário
+    var div = document.getElementById('elements'); // Pega a div
+    var p = div.getElementsByTagName('p'); // Pega todos os parágrafos
+    if (p.length > 0) {
+        for (var i = 0; i < p.length; i++) {
+            p[i].style.color = 'black'; // Muda a cor de todos os parágrafos para preto
+        }
+        var random = Math.floor(Math.random() * p.length); // Escolhe um parágrafo aleatório
+        var i = 0;
+        var interval = setInterval(function() {
+            if (i < p.length) {
+                if (i != 0) {
+                    p[i - 1].style.color = 'black'; // Muda a cor do parágrafo anterior para preto
+                }
+                p[i].style.color = 'red'; // Muda a cor do parágrafo atual para vermelho
+                if (i == random) {
+                    clearInterval(interval); // Para a animação quando chega ao valor sorteado
+                }
+                i++;
+            }
+        }, 500); // Muda a cor de cada parágrafo a cada 500 milissegundos
+    }
 });
 
 
